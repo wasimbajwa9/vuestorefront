@@ -1,3 +1,4 @@
+const {useContext} = require("@nuxtjs/composition-api");
 require('dotenv').config();
 
 /* eslint-disable unicorn/prefer-module */
