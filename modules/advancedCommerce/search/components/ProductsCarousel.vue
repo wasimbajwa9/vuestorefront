@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ac-products-carousel">
     <SfSection :titleHeading="title" :levelHeading="4">
       <SfLoader v-if="loading" :loading="loading"/>
       <SfCarousel v-else>
