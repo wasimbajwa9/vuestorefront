@@ -13,5 +13,10 @@ export function getRoutes(themeDir = path.dirname(url.fileURLToPath(import.meta.
       path: '/:slug+',
       component: path.resolve(themeDir, 'pages/Page.vue'),
     },
+    {
+      name: 'demo',
+      path: '/demo',
+      component: path.resolve(themeDir, 'pages/Demo.vue'),
+    }
   ];
 }
