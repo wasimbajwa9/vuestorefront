@@ -10,20 +10,19 @@ test('New Products section Exists', async ({page}) => {
 
 test('Previous Slide Arrows', async ({page}) => {
     await page.goto(URL);
-    const slides = page.locator('ul.glide__slides li');
-    if(slides.count > 4){
-        await expect(page.getByTestId('carousel-prev-button')).toBeVisible();
-    }else{
-        await expect(page.getByTestId('carousel-prev-button')).toBeHidden();
-    }
+    await page.waitForSelector("ul.glide__slides.sf-carousel__slides");
+    await expect(page.locator('button[data-testid="carousel-prev-button"]')).toBeVisible();
 });
 
 test('Next Slide Arrows', async ({page}) => {
     await page.goto(URL);
-    const slides = page.locator('ul.glide__slides li');
-    if(slides.count > 4){
-        await expect(page.getByTestId('carousel-next-button')).toBeVisible();
-    }else{
-        await expect(page.getByTestId('carousel-next-button')).toBeHidden();
-    }
+    await page.waitForSelector("ul.glide__slides.sf-carousel__slides");
+    await expect(page.locator('button[data-testid="carousel-next-button"]')).toBeVisible();
+});
+
+test('Image gets rendered', async ({page}) => {
+    await page.goto(URL);
+    await page.waitForSelector("ul.glide__slides.sf-carousel__slides");
+    const count = await page.locator('.ac-product-card span[data-testid="image-wrapper"]').count();
+    await expect(count).toBeGreaterThan(0);
 });
