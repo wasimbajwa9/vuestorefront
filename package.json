@@ -30,6 +30,7 @@
     "@nuxtjs/recaptcha": "^1.1.1",
     "@nuxtjs/style-resources": "^1.2.1",
     "@pinia/nuxt": "0.2.1",
+    "@playwright/test": "^1.32.0",
     "@storefront-ui/vue": "0.13.6",
     "@vue-storefront/cache": "2.7.5",
     "@vue-storefront/http-cache": "2.7.5",
